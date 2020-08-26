@@ -10,12 +10,9 @@ class WeatherCarusel extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
       child: Container(
         height: 150.0,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(20.0),
-        border: Border.all(
-          color: Colors.black,
-          width: 1.0
-        )
-        ),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            border: Border.all(color: Colors.black, width: 1.0)),
         child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: dayWeather.weatherOnWeek.length,
@@ -24,10 +21,15 @@ class WeatherCarusel extends StatelessWidget {
               return Row(
                 children: <Widget>[
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
+                    padding:
+                        EdgeInsets.symmetric(vertical: 20.0, horizontal: 10.0),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        Text('${dayWeath.day}'),
+                        Text(
+                          '${dayWeath.day}',
+                          style: TextStyle(color: Colors.yellow),
+                        ),
                         Image(
                           image: AssetImage(dayWeath.iconUrl),
                           width: 50.0,
